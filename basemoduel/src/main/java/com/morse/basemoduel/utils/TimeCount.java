@@ -9,10 +9,8 @@ import android.widget.TextView;
 import com.morse.basemoduel.R;
 
 /**
- * Created by Administrator on 2017/1/12.
+ * 定义一个倒计时的内部类
  */
-
-/* 定义一个倒计时的内部类 */
 public class TimeCount extends CountDownTimer {
 
     private Context mContext;
