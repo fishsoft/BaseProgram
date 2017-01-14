@@ -446,7 +446,7 @@ public class FileUtils {
      * @return
      */
     public static String getRootDirectoryPath() {
-		/*File fstabFile=new File("/etc/vold.fstab");
+        /*File fstabFile=new File("/etc/vold.fstab");
 		FileInputStream fis=null;
 		try{
 			new FileInputStream(fstabFile);
@@ -502,9 +502,9 @@ public class FileUtils {
 		}
 		return null;*/
 
-        File file=UIUtils.getContext().getFilesDir();
-        if(file==null || !file.exists()){
-            file=UIUtils.getContext().getCacheDir();
+        File file = UIUtils.getContext().getFilesDir();
+        if (file == null || !file.exists()) {
+            file = UIUtils.getContext().getCacheDir();
         }
         permissionPath(file.getAbsolutePath());
         return file.getAbsolutePath() + File.separator;//Environment.getRootDirectory().getAbsolutePath() + File.separator;
@@ -616,22 +616,22 @@ public class FileUtils {
      * @return
      */
     public static String getAppCache() {
-        String path=getExpandCache() + "app/";
-        File file=new File(path);
-        if(!file.exists()){
+        String path = getExpandCache() + "app/";
+        File file = new File(path);
+        if (!file.exists()) {
             file.mkdirs();
         }
         permissionPath(path);
         return path;
     }
 
-    public static void permissionPath(String path){
-        if(!isSDCardEnable()){
-            try{
-                Runtime runtime=Runtime.getRuntime();
-                String command="chmod -R 777 " + path;
+    public static void permissionPath(String path) {
+        if (!isSDCardEnable()) {
+            try {
+                Runtime runtime = Runtime.getRuntime();
+                String command = "chmod -R 777 " + path;
                 runtime.exec(command);
-            }catch(Exception e){
+            } catch (Exception e) {
                 e.printStackTrace();
             }
         }

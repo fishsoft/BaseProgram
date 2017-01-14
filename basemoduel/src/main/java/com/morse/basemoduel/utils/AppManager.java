@@ -105,7 +105,7 @@ public class AppManager {
             }
         }
         /*for (Activity activity : activityStack) {
-			if (activity.getClass().equals(cls)) {
+            if (activity.getClass().equals(cls)) {
 				finishActivity(activity);
 			}
 		}*/
@@ -115,7 +115,7 @@ public class AppManager {
      * 结束
      */
     public void finishMutilActivity(Activity activity) {
-        if(activity == null) return;
+        if (activity == null) return;
         try {
             Iterator<Activity> it = activityStack.iterator();
             Activity activityItem = null;
@@ -131,7 +131,7 @@ public class AppManager {
                 }*/
                 if (activityItem.getClass().getName().equals(activity.getClass().getName())) {
                     size++;
-                    if(size > 1){
+                    if (size > 1) {
                         activity.finish();
                         it.remove();
                         break;
@@ -157,7 +157,7 @@ public class AppManager {
                 }
                 activityStack.clear();
             }
-        }catch (Exception e){
+        } catch (Exception e) {
 
         }
 

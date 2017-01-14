@@ -42,7 +42,6 @@ public class WifiUtil implements Comparator<ScanResult> {
         mWifiManager = (WifiManager) context.getSystemService(Context.WIFI_SERVICE);
         // 取得WifiInfo对象
         mWifiInfo = mWifiManager.getConnectionInfo();
-
     }
 
     /**
