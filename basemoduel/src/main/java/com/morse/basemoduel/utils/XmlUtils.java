@@ -1,90 +1,80 @@
 package com.morse.basemoduel.utils;
 
+import android.text.TextUtils;
+import android.util.Xml;
+
+import org.xmlpull.v1.XmlPullParser;
+
+import java.io.ByteArrayInputStream;
+import java.io.InputStream;
+import java.lang.reflect.Field;
+
+/**
+ * XML解析类
+ */
 public class XmlUtils {
-	
-	/**
-	 * 解析服务器上下载的文件
-	 * 
-	 * @param is
-	 * @return
-	 * @throws Exception
-	 */
-//	public UpdateInfo getUpdataInfo(InputStream is) throws Exception {
-//		XmlPullParser parser = Xml.newPullParser();
-//		parser.setInput(is, "UTF-8");
-//		int type = parser.getEventType();
-//		UpdateInfo info = new UpdateInfo();
-//		while (type != XmlPullParser.END_DOCUMENT) {
-//			switch (type) {
-//			case XmlPullParser.START_TAG:
-//				if ("versionCode".equals(parser.getName())) {
-//					info.setVersionCode(StringUtils.string2Int(parser.nextText()));
-//				} else if ("description".equals(parser.getName())) {
-//					info.setDescription(parser.nextText());
-//				} else if ("path".equals(parser.getName())) {
-//					info.setPath(parser.nextText());
-//				}
-//				break;
-//			}
-//			type = parser.next();
-//		}
-//		return info;
-//	}
-//
-//	public static Map<String, CityArea> getObject(InputStream inputXml) throws Exception {
-//		XmlPullParser pullParse = Xml.newPullParser();
-//		Map<String, CityArea> objs = null;
-//		pullParse.setInput(inputXml, "UTF-8");
-//		CityArea cityArea = null;
-//		String province = null;
-//		int event = pullParse.getEventType();
-//		while (event != XmlPullParser.END_DOCUMENT) {
-//			switch (event) {
-//			case XmlPullParser.START_DOCUMENT:
-//				objs = new HashMap<String, CityArea>();
-//				break;
-//			case XmlPullParser.START_TAG:
-//				if ("province".equals(pullParse.getName())) {
-//					pullParse.getProperty("name");
-//
-//					province = pullParse.getAttributeName(0);
-//					province = pullParse.getAttributeValue(0);
-//				}
-//				if ("city".equals(pullParse.getName())) {
-//					cityArea = new CityArea();
-//					cityArea.setProvince(province);
-//				}
-//
-//				if ("cityname".equals(pullParse.getName())) {
-//					String cityname = pullParse.nextText();
-//					cityArea.setCityName(cityname);
-//				}
-//				if ("areacode".equals(pullParse.getName())) {
-//					String areacode = pullParse.nextText();
-//					cityArea.setAreaCode(areacode);
-//				}
-//				if ("adDominName".equals(pullParse.getName())) {
-//					String adDominName = pullParse.nextText();
-//					cityArea.setAdDominName(adDominName);
-//				}
-//				if ("WIFIauthName".equals(pullParse.getName())) {
-//					String WIFIauthName = pullParse.nextText();
-//					cityArea.setwIFIauthName(WIFIauthName);
-//				}
-//				break;
-//			case XmlPullParser.END_TAG:
-//
-//				if ("city".equals(pullParse.getName())) {
-//					objs.put(cityArea.getCityName(), cityArea);
-//					cityArea = null;
-//				}
-//				if ("province".equals(pullParse.getName())) {
-//					province = null;
-//				}
-//				break;
-//			}
-//			event = pullParse.next();
-//		}
-//		return objs;
-//	}
+
+    public Object parse(String text, Class clasz) {
+        return parse(text.getBytes(), clasz);
+    }
+
+    public Object parse(byte[] bytes, Class clasz) {
+        return parse(new ByteArrayInputStream(bytes), clasz);
+    }
+
+    public Object parse(InputStream is, Class clasz) {
+        XmlPullParser xpp = Xml.newPullParser();
+        Object obj = null;
+        try {
+            xpp.setInput(is, "UTF-8");
+            int eventType = xpp.getEventType();
+            String noteName = null;
+            while (eventType != XmlPullParser.END_DOCUMENT) {
+                switch (eventType) {
+                    case XmlPullParser.START_DOCUMENT:
+                        obj = Class.forName(clasz.getName()).newInstance();
+                        clasz = obj.getClass();
+                        break;
+                    case XmlPullParser.START_TAG:
+                        noteName = xpp.getName();
+                        if (!TextUtils.isEmpty(noteName)) {
+                            Field[] fields = clasz.getDeclaredFields();
+                            if (fields != null && fields.length > 0) {
+                                for (Field field : fields) {
+                                    if (field == null) continue;
+                                    if (noteName.equals(field.getName())) {
+                                        field.setAccessible(true);
+                                        if (isBaseClass(field)) {
+
+                                            eventType = xpp.next();
+                                            field.set(obj, xpp.getText());
+                                        } else {
+
+                                            //field.set(obj, );
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        break;
+                    case XmlPullParser.END_TAG:
+
+                        break;
+                }
+                eventType = xpp.next();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return obj;
+    }
+
+    public boolean isBaseClass(Field field) {
+        try {
+            return ((Class) field.get(null)).isPrimitive() || ((Class) field.get(null)).getName().equals(String.class.getName());
+        } catch (Exception e) {
+            return false;
+        }
+    }
 }
