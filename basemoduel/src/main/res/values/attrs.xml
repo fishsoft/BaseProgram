@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="CircleImageView">
+        <attr name="border_width" format="dimension" />
+        <attr name="border_color" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="CpTextItemStyle">
+        <attr name="left_ico" format="reference" />
+        <attr name="right_ico" format="reference" />
+        <attr name="content" format="string|reference" />
+        <attr name="extra" format="string|reference" />
+        <attr name="content_text_size" format="dimension" />
+        <attr name="content_text_color" format="color|reference" />
+        <attr name="extra_text_size" format="dimension" />
+        <attr name="extra_text_color" format="color|reference" />
+        <attr name="extra_enable" format="boolean" />
+        <attr name="cti_checked" format="boolean" />
+        <attr name="cti_top_line_start" format="dimension" />
+        <attr name="cti_bottome_line_start" format="dimension" />
+        <attr name="cti_top_line_end" format="dimension" />
+        <attr name="cti_bottom_line_end" format="dimension" />
+        <attr name="cti_extra_text_gravity" format="integer" />
+    </declare-styleable>
+
+    <declare-styleable name="CpImageItemStyle">
+        <attr name="cii_left_ico" format="reference" />
+        <attr name="cii_right_ico" format="reference" />
+        <attr name="cii_content" format="string|reference" />
+        <attr name="cii_content_text_size" format="dimension" />
+        <attr name="cii_content_text_color" format="color|reference" />
+        <attr name="cii_img" format="reference" />
+        <attr name="cii_img_width" format="dimension" />
+        <attr name="cii_img_height" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="CpSortItemAttr">
+        <attr name="cia_content" format="string|reference" />
+        <attr name="cia_checked" format="boolean" />
+    </declare-styleable>
+
+
+    <declare-styleable name="CpEditItemStyle">
+        <attr name="cti_title" format="string|reference" />
+        <attr name="cti_title_text_size" format="dimension" />
+        <attr name="cti_title_text_color" format="color|reference" />
+        <attr name="cti_val" format="string|reference" />
+        <attr name="cti_val_text_size" format="dimension" />
+        <attr name="cti_val_text_color" format="color|reference" />
+        <attr name="cti_btn_text_size" format="dimension" />
+        <attr name="cti_btn_text_color" format="color|reference" />
+        <attr name="cti_btn_h" format="reference" />
+        <attr name="cti_btn_enable" format="boolean" />
+        <attr name="cti_btn_content" format="string|reference" />
+        <attr name="cti_btn_img" format="reference" />
+        <attr name="cti_btn_bg" format="reference" />
+        <attr name="cti_hint" format="reference" />
+        <attr name="cti_btn_padding_left" format="dimension|reference" />
+        <attr name="cti_btn_padding_right" format="dimension|reference" />
+        <attr name="cti_btn_drawable_padding" format="dimension|reference" />
+        <attr name="cti_edit_enable" format="boolean" />
+        <attr name="cei_top_line_start" format="dimension" />
+        <attr name="cei_bottome_line_start" format="dimension" />
+        <attr name="cei_top_line_end" format="dimension" />
+        <attr name="cei_bottom_line_end" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="CpTextClickItemStyle">
+        <attr name="ctci_left_ico" format="reference" />
+        <attr name="ctci_right_ico" format="reference" />
+        <attr name="ctci_content" format="string|reference" />
+        <attr name="ctci_hint" format="string|reference" />
+        <attr name="ctci_title" format="string|reference" />
+        <attr name="ctci_content_text_size" format="dimension" />
+        <attr name="ctci_content_text_color" format="color|reference" />
+        <attr name="ctci_title_text_size" format="dimension" />
+        <attr name="ctci_title_text_color" format="color|reference" />
+        <attr name="ctci_top_line_start" format="dimension" />
+        <attr name="ctci_bottome_line_start" format="dimension" />
+        <attr name="ctci_top_line_end" format="dimension" />
+        <attr name="ctci_bottom_line_end" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="CpSpinnerItemStyle">
+        <attr name="cpi_title" format="string|reference" />
+        <attr name="cpi_unit" format="reference" />
+        <attr name="cpi_arrays" format="reference" />
+        <attr name="cpi_sp_item_text_size" format="dimension" />
+        <attr name="cpi_sp_item_text_color" format="color|reference" />
+        <attr name="cpi_sp_item_h" format="dimension" />
+        <attr name="cpi_sp_text_size" format="dimension" />
+        <attr name="cpi_sp_text_color" format="color|reference" />
+        <attr name="cpi_unit_text_size" format="dimension" />
+        <attr name="cpi_unit_text_color" format="color|reference" />
+        <attr name="cpi_title_text_size" format="dimension" />
+        <attr name="cpi_title_text_color" format="color|reference" />
+        <attr name="cpi_sp_item_gravity" format="dimension" />
+        <attr name="cpi_top_line_start" format="dimension" />
+        <attr name="cpi_bottome_line_start" format="dimension" />
+        <attr name="cpi_top_line_end" format="dimension" />
+        <attr name="cpi_bottom_line_end" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="CpRadioGroupViewStyle">
+        <attr name="crg_texts" format="reference" />
+        <attr name="crg_v_split_enable" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="ViewPagerLineIndicatorAttr">
+        <attr name="vpli_enable_draw_line" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="DswifiView">
+        <attr name="dswifi_title" format="string|reference" />
+        <attr name="dswifi_title_size" format="dimension" />
+        <attr name="dswifi_content" format="string|reference" />
+        <attr name="dswifi_content_size" format="dimension" />
+        <attr name="dswifi_content_color" format="color|reference" />
+        <attr name="dswifi_unit" format="string|reference" />
+        <attr name="dswifi_unit_size" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="IndicatorStyle">
+        <attr name="indicator_width" format="dimension" />
+        <attr name="indicator_focus_color" format="color|reference" />
+        <attr name="indicator_blur_color" format="color|reference" />
+        <attr name="indicator_space" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="FlagViewStyle">
+        <attr name="flag_view_pos">
+            <flag name="flag_left_top" value="0x01" />
+            <flag name="flag_right_top" value="0x02" />
+            <flag name="flag_left_bottom" value="0x04" />
+            <flag name="flag_right_bottom" value="0x08" />
+        </attr>
+        <attr name="flag_view_style">
+            <enum name="text" value="0x01" />
+            <enum name="img" value="0x02" />
+            <enum name="notice" value="0x04" />
+        </attr>
+        <attr name="flag_view_lt_img" format="reference" />
+        <attr name="flag_view_rt_img" format="reference" />
+        <attr name="flag_view_lb_img" format="reference" />
+        <attr name="flag_view_rb_img" format="reference" />
+        <attr name="flag_view_lt_text" format="string|reference" />
+        <attr name="flag_view_rt_text" format="string|reference" />
+        <attr name="flag_view_lb_text" format="string|reference" />
+        <attr name="flag_view_rb_text" format="string|reference" />
+        <attr name="flag_view_lt_bg" format="reference" />
+        <attr name="flag_view_rt_bg" format="reference" />
+        <attr name="flag_view_lb_bg" format="reference" />
+        <attr name="flag_view_rb_bg" format="reference" />
+        <attr name="flag_view_lt_bg_color" format="reference|color" />
+        <attr name="flag_view_rt_bg_color" format="reference|color" />
+        <attr name="flag_view_lb_bg_color" format="reference|color" />
+        <attr name="flag_view_rb_bg_color" format="reference|color" />
+        <attr name="flag_view_lt_text_color" format="reference|color" />
+        <attr name="flag_view_rt_text_color" format="reference|color" />
+        <attr name="flag_view_lb_text_color" format="reference|color" />
+        <attr name="flag_view_rb_text_color" format="reference|color" />
+        <attr name="flag_view_lt_text_size" format="integer" />
+        <attr name="flag_view_rt_text_size" format="integer" />
+        <attr name="flag_view_lb_text_size" format="integer" />
+        <attr name="flag_view_rb_text_size" format="integer" />
+        <attr name="flag_view_lt_padding" format="reference|dimension" />
+        <attr name="flag_view_rt_padding" format="reference|dimension" />
+        <attr name="flag_view_lb_padding" format="reference|dimension" />
+        <attr name="flag_view_rb_padding" format="reference|dimension" />
+        <attr name="flag_view_lt_margin" format="reference|dimension" />
+        <attr name="flag_view_rt_margin" format="reference|dimension" />
+        <attr name="flag_view_lb_margin" format="reference|dimension" />
+        <attr name="flag_view_rb_margin" format="reference|dimension" />
+        <attr name="flag_view_img" format="reference" />
+        <attr name="flag_view_text" format="reference|string" />
+        <attr name="flag_view_text_bg" format="reference|color" />
+        <attr name="flag_view_text_size" format="integer" />
+        <attr name="flag_view_text_color" format="reference|color" />
+    </declare-styleable>
+
+    <declare-styleable name="CpTextCheckView">
+        <attr name="cp_check_text" format="string|reference" />
+        <attr name="cp_check_text_size" format="dimension" />
+        <attr name="cp_check_text_color" format="color|reference" />
+        <attr name="cp_check_gravity" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="CpEditView">
+        <attr name="cp_edit_label" format="string|reference" />
+        <attr name="cp_edit_text" format="string|reference" />
+        <attr name="cp_edit_extra" format="string|reference" />
+        <attr name="cp_edit_hint" format="string|reference" />
+    </declare-styleable>
+
+    <declare-styleable name="LabelView">
+        <!-- 设置文字内容 -->
+        <attr name="lv_text" format="string" />
+        <!-- 设置文字颜色,默认#ffffff -->
+        <attr name="lv_text_color" format="color" />
+        <!-- 设置文字大小,默认11sp -->
+        <attr name="lv_text_size" format="dimension" />
+        <!-- 设置文字是否支持加粗,默认true -->
+        <attr name="lv_text_bold" format="boolean" />
+        <!-- 设置文字是否支持全部大写,默认true-->
+        <attr name="lv_text_all_caps" format="boolean" />
+        <!-- 设置背景颜色,默认"#FF4081"-->
+        <attr name="lv_background_color" format="color" />
+        <!-- 设置LabelView所在矩形最小宽高,默认mFillTriangle?35dp:50dp-->
+        <attr name="lv_min_size" format="dimension" />
+        <!-- 设置文字上下padding,默认3.5dp,mFillTriangle为true时无效-->
+        <attr name="lv_padding" format="dimension" />
+        <!-- 设置LabelView方向 -->
+        <attr name="lv_gravity" format="enum">
+            <enum name="TOP_LEFT" value="51" />
+            <enum name="TOP_RIGHT" value="53" />
+            <enum name="BOTTOM_LEFT" value="83" />
+            <enum name="BOTTOM_RIGHT" value="85" />
+        </attr>
+        <!-- 设置是否填充三角区域,默认false -->
+        <attr name="lv_fill_triangle" format="boolean" />
+
+    </declare-styleable>
+
+    <declare-styleable name="ChartView">
+        <attr name="leftColor" format="color" />
+        <attr name="leftColorBottom" format="color" />
+        <attr name="selectLeftColor" format="color" />
+        <attr name="rightColor" format="color" />
+        <attr name="rightColorBottom" format="color" />
+        <attr name="selectRightColor" format="color" />
+        <attr name="xyColor" format="color" />
+    </declare-styleable>
+
+    <!--坐标轴线条出息-->
+    <attr name="coordinatesLineWidth" format="dimension"/>
+    <!--坐标轴字体大小-->
+    <attr name="coordinatesTextSize" format="dimension" />
+    <!--坐标轴轴字体颜色-->
+    <attr name="coordinatesTextColor" format="color" />
+    <!--折线颜色-->
+    <attr name="lineColor" format="color" />
+    <!--折线粗细-->
+    <attr name="lineWidth" format="dimension" />
+    <!--小圆点半径-->
+    <attr name="averageCircleradius" format="dimension" />
+    <!--表格的数据类型-->
+    <attr name="tableType" format="string" />
+    <!--大圆点的颜色-->
+    <attr name="maxcircleColor" format="color" />
+    <!--小圆点的颜色-->
+    <attr name="mincircleColor" format="color" />
+    <!--背景色-->
+    <attr name="bgColor" format="color" />
+
+    <declare-styleable name="LineView">
+        <attr name="coordinatesLineWidth"/>
+        <attr name="coordinatesTextSize"/>
+        <attr name="coordinatesTextColor"/>
+        <attr name="lineColor"/>
+        <attr name="lineWidth"/>
+        <attr name="averageCircleradius"/>
+        <attr name="tableType"/>
+        <attr name="maxcircleColor"/>
+        <attr name="mincircleColor"/>
+        <attr name="bgColor"/>
+    </declare-styleable>
+
+</resources>

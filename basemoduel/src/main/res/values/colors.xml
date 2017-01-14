@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="transparent">#00000000</color>
+    <color name="transparent_1">#20000000</color>
+    <color name="half_transparent">#F0000000</color>
+    <color name="b_transparent">#B0000000</color>
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="half_transparent_white">#F0FFFFFF</color>
+    <color name="white_check">#F5F5F5</color>
+    <color name="gray">#CCCCCC</color>
+    <color name="gray2">#7E7E7E</color>
+    <color name="blue_check">#0983CB</color>
+    <color name="blue_text_color_for_btn">#5AB5FC</color>
+    <color name="blue">#00A0FE</color>
+    <color name="green">#04AB01</color>
+    <color name="regiest_red">#ff4249</color>
+    <color name="red">#FE4249</color>
+    <color name="yellow">#FDAF00</color>
+    <color name="yellow2">#FFE762</color>
+    <color name="red_checked">#F44366</color>
+    <color name="zhifubao">#00AAEE</color>
+    <color name="silver">#F8F8F8</color>
+    <color name="disable">#D8D8D8</color>
+    <color name="main_default">#B4B4B4</color>
+    <color name="register_enable_color">#9DDAFF</color>
+    <color name="back_color">#009EFF</color>
+
+    <color name="main_oval_bg">#eaeaea</color>
+    <!-- 注册首页字体颜色 -->
+    <color name="regiest_black">#252525</color>
+    <!-- 手机注册界面字体颜色 -->
+    <color name="register_mobile_black">#252525</color>
+    <color name="regiest_mobile_blue">#009eff</color>
+    <!-- 填写店铺详情颜色 -->
+    <color name="shop_address_detail">#bdbdbd</color>
+    <!-- 首页背景颜色 -->
+    <color name="main_bg">#F0F0F0</color>
+    <!-- 首页今日收款 -->
+    <color name="main_tv">#252525</color>
+    <!-- 首页三个模块的背景的线值 -->
+    <color name="main_menu_bg_line">#E1E1E1</color>
+
+    <!-- 记录详情的tv颜色 -->
+    <color name="record_detail_tv">#525252</color>
+
+    <!-- 收银台 -->
+    <color name="cashier_pay_green">#04ab00</color>
+    <color name="cashier_pay_help">#244456</color>
+
+    <!-- 更换银行卡 -->
+    <color name="gray_01">#686868</color>
+    <color name="layout_bg">#b3b3b3</color>
+
+    <color name="default_line">#E4E4E4</color>
+
+    <color name="text_color">#000000</color>
+    <color name="text_color_hint">#CCCCCC</color>
+    <color name="subtitle">#CCCCCC</color>
+    <color name="sub_content">#666666</color>
+    <color name="cash_back_text_color">#686868</color>
+    <color name="text_hint_color">#999999</color>
+    <color name="default_text_color">#424242</color>
+    <color name="cp_edit_text_color">#999999</color>
+
+    <color name="focus_text_color">#FE4249</color>
+    <color name="focus_bg_color">#F0FE4249</color>
+    <color name="fill_focus_color">#FE4249</color>
+    <color name="fill_blur_color">#FECBCD</color>
+    <color name="border_focus_color">#FE4249</color>
+    <color name="border_blur_color">#FFFFFF</color>
+
+    <color name="bill_text_color">#6F6F6F</color>
+
+    <color name="qrcode_text_color">#9FA0A0</color>
+    <color name="qrcode_text_color2">#BDBDBD</color>
+
+    <!-- SheetView -->
+    <color name="sheet_bg">#FFFFFF</color>
+    <color name="sheet_border">#EDEDED</color>
+    <color name="sheet_item_focus">#F0FFFFFF</color>
+    <color name="sheet_normal_text_color">#03A9F4</color>
+    <color name="sheet_title_text_color">#666666</color>
+
+    <color name="mm_introduce_text_color">#98FCFF</color>
+
+
+
+    <!-- zxing -->
+    <!--<color name="result_view">#b0000000</color>
+    <color name="viewfinder_mask">#60000000</color>-->
+
+    <color name="result_view">#b0000000</color>
+    <color name="viewfinder_mask">#A0000000</color>
+    <color name="zxing_text_color">#9FA0A0</color>
+
+    <color name="full_cut_bg">#FFDFB2</color>
+    <color name="full_cut_text_color">#FF8F03</color>
+    <color name="full_cut_text_color_check">#FF6C00</color>
+    <color name="full_cut_text_color_check_half_transparent">#F0FF6C00</color>
+    <color name="half_full_cut_bg">#F0FF6C00</color>
+
+    <color name="textcolor_content">#6B6B6B</color>
+    <color name="appliy_receipts_sheet_title_color">#999999</color>
+    <color name="pink">#FFDBDB</color>
+
+    <color name="shallow_red">#FFF6F7</color>
+
+    <color name="invite_indicator_focus_color">#787878</color>
+    <color name="invite_indicator_blur_color">#CCCCCC</color>
+
+    <color name="yellow_circle_color">#FEE763</color>
+
+    <color name="cash_safe_color">#969696</color>
+
+    <color name="text_hint_color2">#868686</color>
+    <color name="line_color">#DDDDDD</color>
+
+    <color name="partner_mm_red_checked">#FFBFC1</color>
+
+    <color name="progress_line_color">#00C853</color>
+</resources>

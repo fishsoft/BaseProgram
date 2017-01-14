@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/default_font_size" />
+
+    <TextView
+        android:id="@+id/et_val"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/dip_10"
+        android:layout_weight="1"
+        android:background="@color/transparent"
+        android:gravity="center_vertical"
+        android:maxLength="30"
+        android:singleLine="true"
+        android:textSize="@dimen/default_font_size" />
+
+    <Button
+        android:id="@+id/btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dip_5"
+        android:background="@color/transparent"
+        android:drawablePadding="@dimen/default_drawable_padding_size"
+        android:minWidth="@dimen/dip_30"
+        android:paddingBottom="@dimen/dip_3"
+        android:paddingLeft="@dimen/dip_5"
+        android:paddingRight="@dimen/dip_5"
+        android:paddingTop="@dimen/dip_3"
+        android:textSize="@dimen/text_size_14"
+        android:textStyle="normal" />
+</merge>

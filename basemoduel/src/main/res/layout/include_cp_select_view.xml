@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/default_font_size" />
+
+    <Spinner
+        android:id="@+id/sp_val"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/dip_10"
+        android:layout_weight="1"
+        android:background="@color/transparent"
+        android:dropDownSelector="@color/white"
+        android:gravity="center_vertical"
+        android:singleLine="true"
+        android:textSize="@dimen/default_font_size" />
+
+    <TextView
+        android:id="@+id/tv_unit"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dip_10"
+        android:layout_weight="1"
+        android:textStyle="normal"
+        android:visibility="gone" />
+</merge>
