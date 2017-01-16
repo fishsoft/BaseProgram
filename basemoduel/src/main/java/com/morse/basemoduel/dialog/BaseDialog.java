@@ -15,7 +15,6 @@ import com.morse.basemoduel.interfaces.IConfirmListener;
 /**
  * Created by Administrator on 2017/1/9.
  */
-
 public abstract class BaseDialog extends Dialog implements View.OnClickListener {
 
     protected View view;

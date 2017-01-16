@@ -38,6 +38,7 @@ import java.io.BufferedOutputStream;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -210,19 +211,6 @@ public class ImageUtils {
     }
 
     /**
-     * 获取BitmapFactory.Options
-     *
-     * @param pathName
-     * @return
-     */
-    public static Options getBitmapOptions(String pathName) {
-        Options opts = new Options();
-        opts.inJustDecodeBounds = true;
-        BitmapFactory.decodeFile(pathName, opts);
-        return opts;
-    }
-
-    /**
      * 获取图片角度
      *
      * @param filename
@@ -281,47 +269,6 @@ public class ImageUtils {
         bitmap = ThumbnailUtils.extractThumbnail(bitmap, width, height, ThumbnailUtils.OPTIONS_RECYCLE_INPUT);
         return bitmap;
     }
-
-    /**
-     * 保存视频缩略图
-     *
-     * @param file
-     * @param width
-     * @param height
-     * @param kind
-     * @return
-     */
-    // public static String saveVideoThumbnail(File file, int width, int height,
-    // int kind) {
-    // Bitmap videoThumbnail = getVideoThumbnail(file.getAbsolutePath(), width,
-    // height, kind);
-    // File thumbFile = new File(PathUtils.getInstance().getVideoPath(), "th" +
-    // file.getName());
-    // try {
-    // thumbFile.createNewFile();
-    // } catch (IOException e) {
-    // e.printStackTrace();
-    // }
-    // FileOutputStream fileOutputStream = null;
-    // try {
-    // fileOutputStream = new FileOutputStream(thumbFile);
-    // } catch (FileNotFoundException var10) {
-    // var10.printStackTrace();
-    // }
-    // videoThumbnail.compress(Bitmap.CompressFormat.JPEG, 100,
-    // fileOutputStream);
-    // try {
-    // fileOutputStream.flush();
-    // } catch (IOException e) {
-    // e.printStackTrace();
-    // }
-    // try {
-    // fileOutputStream.close();
-    // } catch (IOException var8) {
-    // var8.printStackTrace();
-    // }
-    // return thumbFile.getAbsolutePath();
-    // }
 
     /**
      * Image resource ID was converted into a byte [] data 图片资源ID 转换 为 图片 byte[]
@@ -631,6 +578,19 @@ public class ImageUtils {
     /************** 拓展助手上传图片压缩 *****************/
 
     /**
+     * 得到指定路径图片的options，不加载内存
+     *
+     * @param srcPath 源图片路径
+     * @return Options {@link BitmapFactory.Options}
+     */
+    public static BitmapFactory.Options getBitmapOptions(String srcPath) {
+        BitmapFactory.Options options = new BitmapFactory.Options();
+        options.inJustDecodeBounds = true;
+        BitmapFactory.decodeFile(srcPath, options);
+        return options;
+    }
+
+    /**
      * 获取压缩bitmap和编码后的base64
      *
      * @param uploadPath
@@ -639,7 +599,7 @@ public class ImageUtils {
      * @param srcLength
      * @return
      */
-    public static /*CompressImg*/void getCompressImg(String uploadPath, int srcWidth, int srcHeight, int srcLength) {
+    public static void getCompressImg(String uploadPath, int srcWidth, int srcHeight, int srcLength) {
         Options opts = new Options();// 解析图片的选项参数
         opts.inPreferredConfig = Config.RGB_565;
 
@@ -662,8 +622,6 @@ public class ImageUtils {
         if (dy >= dx && dx >= 1) {
             scale = dx;
         }
-
-        // LogUtils.show("压缩比例： " + scale);
 
         opts.inJustDecodeBounds = false;// 真正的解析bitmap
         opts.inSampleSize = scale; // 指定图片缩放比例
@@ -694,16 +652,13 @@ public class ImageUtils {
      * @return
      */
     public static HashMap<Bitmap, String> getScaleBitmap(String uploadPath, String showPath) {
-        Options opts = new Options();// 解析图片的选项参数
+        Options opts = getBitmapOptions(uploadPath);
         opts.inPreferredConfig = Config.RGB_565;
 
         int srcWidth = 1000;
         int srcHeigth = 500;
 
         // 2.得到图片的宽高属性。
-        opts.inJustDecodeBounds = true;// 不真正的解析这个bitmap ，只是获取bitmap的宽高信息
-        Bitmap bitmap = BitmapFactory.decodeFile(uploadPath, opts);
-
         int imageHeight = opts.outHeight;
         int imageWidth = opts.outWidth;
         // 3.计算缩放比例。
@@ -724,7 +679,7 @@ public class ImageUtils {
 
         opts.inJustDecodeBounds = false;// 真正的解析bitmap
         opts.inSampleSize = scale; // 指定图片缩放比例
-        bitmap = BitmapFactory.decodeFile(uploadPath, opts);
+        Bitmap bitmap = BitmapFactory.decodeFile(uploadPath, opts);
 
         return compressImage(bitmap, showPath);
     }

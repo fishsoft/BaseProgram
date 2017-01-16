@@ -637,4 +637,19 @@ public class FileUtils {
         }
 
     }
+
+    public static File getDiskCacheDir(Context context, String uniqueName) {
+        String cachePath;
+        if (Environment.MEDIA_MOUNTED.equals(Environment.getExternalStorageState())
+                || !Environment.isExternalStorageRemovable()) {
+            cachePath = context.getExternalCacheDir().getPath();
+        } else {
+            cachePath = context.getCacheDir().getPath();
+        }
+        File file=new File(cachePath + File.separator + uniqueName);
+        if(!file.exists()){
+            file.mkdir();
+        }
+        return file;
+    }
 }
