@@ -1,14 +1,24 @@
 package com.morse.base;
 
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.Rect;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.morse.basemoduel.media.AudioRecordRunable;
+import com.morse.basemoduel.media.CameraRecorderRunable;
 import com.morse.basemoduel.views.TemperatureView;
+import com.morse.basemoduel.views.WatchView;
 import com.morse.basemoduel.views.chart.ChartView;
 
 import java.util.ArrayList;
@@ -31,6 +41,9 @@ public class MainActivity extends AppCompatActivity {
     //    private HorzinonlChartView mHorzinonlChartView;
     private TemperatureView tempControl;
 
+
+    private WatchView iv;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,6 +60,34 @@ public class MainActivity extends AppCompatActivity {
 //                Toast.makeText(MainActivity.this, temp + "°", Toast.LENGTH_SHORT).show();
 //            }
 //        });
+
+        iv = (WatchView) findViewById(R.id.watch);
+
+//        Bitmap bitmap=Bitmap.createBitmap(400,400,Bitmap.Config.ARGB_8888);
+//        Canvas canvas=new Canvas(bitmap);
+//        //绘制文字
+//        Paint paint=new Paint();
+//        paint.setAntiAlias(true);
+//        paint.setStyle(Paint.Style.FILL);
+//        paint.setTextAlign(Paint.Align.LEFT);
+//
+//        int sp=14;
+//        paint.setTextSize(sp);
+//        paint.setTextSkewX(0.5f);
+//        paint.setUnderlineText(true);
+//        paint.setFakeBoldText(true);
+//        canvas.drawText("Hello World!",10,100,paint);
+//
+//
+//        //绘制图形
+//        paint.setStyle(Paint.Style.STROKE);
+//        paint.setColor(Color.RED);
+//        paint.setStrokeWidth(20);
+//        paint.setStrokeJoin(Paint.Join.BEVEL);
+//        canvas.drawRect(new Rect(10,200,350,350),paint);
+//
+//        iv.setImageBitmap(bitmap);
+        iv.run();
     }
 
     private void initChatView() {
@@ -92,5 +133,13 @@ public class MainActivity extends AppCompatActivity {
                 relativeLayout.addView(llChart);
             }
         });
+    }
+
+    public void audioRecord(View view) {
+        new AudioRecordRunable().run();
+    }
+
+    public void cameraRecord(View view) {
+        new CameraRecorderRunable().run();
     }
 }

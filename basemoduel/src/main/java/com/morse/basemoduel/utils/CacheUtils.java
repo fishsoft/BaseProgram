@@ -21,12 +21,17 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 /**
- * 缓存工具类
+ * DiskLruCache 缓存工具类
  */
 public class CacheUtils {
 
     private DiskLruCache mDiskLruCache = null;
 
+    /**
+     * 打开缓存目录
+     * @param context
+     * @param relativePath
+     */
     public void openCache(Context context, String relativePath) {
         try {
             File cacheDir = FileUtils.getDiskCacheDir(context, relativePath);
@@ -39,6 +44,11 @@ public class CacheUtils {
         }
     }
 
+    /**
+     * 获取App版本
+     * @param context
+     * @return
+     */
     private int getAppVersion(Context context) {
         try {
             PackageInfo info = context.getPackageManager().getPackageInfo(context.getPackageName(), 0);
@@ -49,6 +59,12 @@ public class CacheUtils {
         return 1;
     }
 
+    /**
+     * 下载文件到缓存目录
+     * @param urlString
+     * @param outputStream
+     * @return
+     */
     private boolean downloadUrlToStream(String urlString, OutputStream outputStream) {
         HttpURLConnection urlConnection = null;
         BufferedOutputStream out = null;
